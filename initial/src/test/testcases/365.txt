@@ -1,0 +1,10 @@
+
+type Printer interface {
+    print(message string)
+}
+
+func main() {
+    // No implementation here to test just declaration
+    foo(5).x[2][k].y[foo(6)].abc(8.25)[false] := 10
+}
+

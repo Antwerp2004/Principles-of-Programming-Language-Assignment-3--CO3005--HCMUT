@@ -49,7 +49,7 @@ class TestLexer:
 class NewErrorListener(ConsoleErrorListener):
     INSTANCE = None
     def syntaxError(self, recognizer, offendingSymbol, line, column, msg, e):
-        raise SyntaxException("Error on line "+ str(line) + " col " + str(column)+ ": " + offendingSymbol.text)
+        raise SyntaxException("Error on line "+ str(line) + " col " + str(column+1)+ ": " + offendingSymbol.text)
 NewErrorListener.INSTANCE = NewErrorListener()
 
 class SyntaxException(Exception):

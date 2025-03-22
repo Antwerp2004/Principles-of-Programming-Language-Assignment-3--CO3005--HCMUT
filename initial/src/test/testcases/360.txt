@@ -1,0 +1,8 @@
+const GREETING = "Hello, World!"
+
+var message string
+
+func main() {
+    message := GREETING
+    println(message)
+}

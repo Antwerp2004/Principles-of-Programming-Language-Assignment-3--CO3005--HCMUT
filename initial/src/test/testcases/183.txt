@@ -1,0 +1,14 @@
+type Person struct {
+    name string
+    age int
+}
+
+var p Person
+
+func main() {
+    p.name = "Alice"
+    p.age = 30
+    println(p.name, p.age)
+    var message string = p.name + " is " + p.age + " years old" // Concatenation with integer will cause a type error
+
+}

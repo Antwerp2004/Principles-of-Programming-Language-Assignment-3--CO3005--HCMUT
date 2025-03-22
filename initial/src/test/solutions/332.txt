@@ -1,0 +1,1 @@
+Program([StructType(Foo,[(bar,IntType)],[]),FuncDecl(main,[],VoidType,Block([VarDecl(f,Id(Foo),StructLiteral(Foo,[(bar,IntLiteral(5))]))]))])

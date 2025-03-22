@@ -1,0 +1,4 @@
+func bar(arr float, b boolean) {
+x[a(b)][b(a)] := foo(1,2,"abcd",154/4)
+var x int= readString()
+}

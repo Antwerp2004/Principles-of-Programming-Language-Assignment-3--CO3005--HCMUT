@@ -1,0 +1,10 @@
+// Test case 22: Multiple struct instances
+type Rectangle struct {
+    width int;
+    height int;
+}
+func main() {
+    var rect1 Rectangle = {width: 10, height: 5};
+    var rect2 Rectangle = {width: 7, height: 3};
+    println(rect1.width * rect1.height + rect2.width * rect2.height);
+}

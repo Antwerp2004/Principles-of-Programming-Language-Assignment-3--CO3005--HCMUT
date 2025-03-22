@@ -1,0 +1,7 @@
+
+
+// Test case 41:  Simple Array Literal test
+func main() {
+	var arr [3]string = [3]string{"Hello", World, {1,2,3}}
+
+}

@@ -1,0 +1,1 @@
+Program([VarDecl(x,IntType,IntLiteral(5)),FuncDecl(main,[ParDecl(x,IntType),ParDecl(y,FloatType),ParDecl(z,FloatType),ParDecl(t,ArrayType(IntType,[IntLiteral(2),IntLiteral(3)])),ParDecl(k,BoolType)],VoidType,Block([FuncCall(println,[Id(x)])]))])

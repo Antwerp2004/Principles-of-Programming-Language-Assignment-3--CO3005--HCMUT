@@ -1,0 +1,6 @@
+//func max(a int, b number)
+/* begin
+## Comment 1
+##if (x == 6) else {doSomething();}
+## Comment 2
+*/

@@ -1,0 +1,1 @@
+Program([ConstDecl(a,MethodCall(Id(x),nigh,[Id(yes)]))])

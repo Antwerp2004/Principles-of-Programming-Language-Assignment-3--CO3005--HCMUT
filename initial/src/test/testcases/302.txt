@@ -1,0 +1,9 @@
+// Test case 2: Function with parameters, local variables, and return
+func add(a int, b int) int {
+    var sum int = a + b;
+    return sum
+}
+func main() {
+    var result int = add(5, 3);
+    println(result);
+}

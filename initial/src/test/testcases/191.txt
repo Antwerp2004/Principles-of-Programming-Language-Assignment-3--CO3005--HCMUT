@@ -1,0 +1,9 @@
+
+var x int = 10
+
+func main() {
+    if (x > 5)
+        println("x > 5")  // Missing braces - should cause an error
+    else
+        println("x <= 5")
+}

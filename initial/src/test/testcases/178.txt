@@ -1,0 +1,6 @@
+ var x int = 5
+
+func main() {
+    var x string = "hello" // x redeclared in the same scope
+    println(x)
+}

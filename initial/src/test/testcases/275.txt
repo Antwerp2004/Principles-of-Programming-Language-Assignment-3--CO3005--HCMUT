@@ -1,0 +1,6 @@
+ 
+var x int = 5
+
+func main(x int, y,z float, t [2][3]int, k) {
+    println(x)
+}

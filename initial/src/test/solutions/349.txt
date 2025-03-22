@@ -1,0 +1,1 @@
+Program([FuncDecl(exampleFunc,[],IntType,Block([Return(BinaryOp(StringLiteral("hello"),+,IntLiteral(5)))]))])

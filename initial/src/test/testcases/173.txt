@@ -1,0 +1,6 @@
+var maxInt int = 2147483647  // Maximum 32-bit integer (adjust if needed)
+
+func main() {
+    var overflow int = maxInt + 1
+    println(overflow)  //  What happens when we overflow?
+}

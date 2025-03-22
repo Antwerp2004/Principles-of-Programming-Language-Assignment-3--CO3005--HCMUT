@@ -1,0 +1,6 @@
+ 
+var x int = 5
+var y int = 10 // Missing semicolon or newline here
+func main() {
+    println(x + y)
+}

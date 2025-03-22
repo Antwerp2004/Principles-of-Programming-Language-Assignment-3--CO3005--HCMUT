@@ -1,0 +1,17 @@
+
+// Test case 44: Nested loops and branching logic
+
+func main() {
+
+	for i := 0; i < 5; i += 1 {
+		for j := 0; j < 5; j += 1 {
+			if (i == j) {
+				println("Diagonal")
+			} else if (i > j) {
+				println("Below Diagonal")
+			} else {
+				println("Above Diagonal")
+			}
+		}
+	}
+}

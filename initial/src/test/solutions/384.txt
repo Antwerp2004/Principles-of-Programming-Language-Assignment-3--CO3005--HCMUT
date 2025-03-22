@@ -1,0 +1,1 @@
+Program([VarDecl(data,ArrayLiteral([IntLiteral(4)],IntType,[IntLiteral(10),IntLiteral(20),IntLiteral(30),IntLiteral(40)])),FuncDecl(main,[],VoidType,Block([ForEach(Id(index),Id(value),Id(data),Block([FuncCall(println,[BinaryOp(Id(index),*,Id(value))])])),Assign(ArrayCell(Id(data),[Id(index)]),Id(z)),Assign(Id(y),IntLiteral(10))]))])

@@ -1,0 +1,4 @@
+// Test case 34: Invalid Character in identifier (Error)
+func main() {
+    var x$y int = 10;
+}

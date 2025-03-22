@@ -1,0 +1,13 @@
+// Test case 7: Multiple function calls with different parameters
+func square(x int) int {
+    return x * x;
+}
+func cube(x int) int {
+    return x * x * x;
+}
+func main() {
+    var sq int = square(5);
+    var cb int = cube(3);
+    println(sq)
+    println(cb)
+}

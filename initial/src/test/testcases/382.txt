@@ -1,0 +1,11 @@
+func main() {
+    for i := 0; i < 20; i+= 1 {
+        if (i % 5 == 0) {
+            continue // Skip multiples of 5
+        }
+        if (i > 3.E+5 && i < 15) {
+            break    // Exit if between 13 and 14
+        }
+        println(i)
+    }
+}

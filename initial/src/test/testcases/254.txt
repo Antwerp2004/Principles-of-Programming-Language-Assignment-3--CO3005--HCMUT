@@ -1,0 +1,3 @@
+func foo(str string) boolean
+writeString(str)
+var x = 7 + (t - false)

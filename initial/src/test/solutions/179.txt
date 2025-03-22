@@ -1,0 +1,1 @@
+var,globalVar,int,=,20,;,func,myFunction,(,),{,var,localVar,int,=,10,;,println,(,globalVar,+,localVar,),;,},;,func,main,(,),{,myFunction,(,),;,println,(,globalVar,),;,},;,<EOF>

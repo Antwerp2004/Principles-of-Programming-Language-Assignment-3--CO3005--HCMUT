@@ -1,0 +1,1 @@
+Program([VarDecl(notAnArray,IntType,IntLiteral(5)),FuncDecl(main,[],VoidType,Block([ForEach(Id(index),Id(value),Id(notAnArray),Block([FuncCall(println,[Id(index),Id(value)])]))]))])

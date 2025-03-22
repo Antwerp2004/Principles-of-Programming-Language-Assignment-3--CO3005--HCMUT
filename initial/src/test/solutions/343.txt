@@ -1,0 +1,1 @@
+Program([FuncDecl(main,[],VoidType,Block([VarDecl(inter,IntType,Nil),If(BinaryOp(Id(inter),==,Nil),Block([FuncCall(println,[StringLiteral("It is nil")])]))]))])

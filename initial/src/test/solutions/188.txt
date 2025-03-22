@@ -1,0 +1,1 @@
+func,isEven,(,n,int,),bool,{,return,n,%,2,==,0,;,},;,var,num,int,=,8,;,func,main,(,),{,if,(,isEven,(,num,),),{,println,(,"Even",),;,},else,{,println,(,"Odd",),;,},;,},;,<EOF>

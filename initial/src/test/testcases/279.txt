@@ -1,0 +1,12 @@
+ var globalVar int = 20
+
+func myFunction() {
+    var localVar int = 10
+    println(globalVar + localVar)
+}
+
+func main() {
+    myFunction()
+    println(globalVar) // Access global variable from main
+    //println(localVar) // Error: localVar is not defined in main
+}

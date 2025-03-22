@@ -1,0 +1,12 @@
+// Test case 31:  Boolean Expression nesting
+func main() {
+
+	var x int = 10
+	var y int = 5
+
+	if (((x > 5) && (y < 10)) || (x == y)){
+		println("True")
+	} else {
+		println("False")
+	}
+}

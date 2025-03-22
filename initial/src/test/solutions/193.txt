@@ -1,0 +1,1 @@
+func,add,(,x,int,,,y,int,),{,return,x,+,y,;,},;,func,main,(,),{,var,result,int,=,add,(,5,,,3,),;,println,(,result,),;,},;,<EOF>

@@ -1,0 +1,6 @@
+// Test case 35: Missing Return in function declared to return type
+func exampleFunc(i int ) int {
+var xy int = 10;
+}
+
+func main() { var xy int = 10; }

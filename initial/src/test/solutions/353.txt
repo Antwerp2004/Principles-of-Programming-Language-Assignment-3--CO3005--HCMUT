@@ -1,0 +1,1 @@
+Program([FuncDecl(main,[ParDecl(x,StringType),ParDecl(y,FloatType)],VoidType,Block([Return(IntLiteral(1))]))])

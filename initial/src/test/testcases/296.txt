@@ -1,0 +1,3 @@
+func someOtherFunction() {
+    println(x = 5)
+}

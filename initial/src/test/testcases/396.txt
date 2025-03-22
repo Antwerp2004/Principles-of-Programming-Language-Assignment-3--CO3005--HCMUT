@@ -1,0 +1,3 @@
+func someOtherFunction() {
+    println(x == 0x5Af)
+}

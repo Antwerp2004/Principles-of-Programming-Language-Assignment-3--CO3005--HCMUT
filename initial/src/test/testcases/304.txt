@@ -1,0 +1,9 @@
+/* Test case 4: Array declaration, initialization, and iteration*/
+func main() {
+    var numbers [abc]int = [6]float{1, 2, 3, 4, 5}
+    var sum int = 0
+    for i := 0; i < 5; i += 1 {
+        sum := sum + numbers[i];
+    }
+    println(sum)
+}

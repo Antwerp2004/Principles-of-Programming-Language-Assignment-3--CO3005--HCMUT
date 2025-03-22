@@ -1,0 +1,7 @@
+ // Test case 29: Test for "range" with a single value
+func main() {
+	arr := [3]int{1,2,3}
+	for _, value := range arr {
+		println(value)
+	}
+}

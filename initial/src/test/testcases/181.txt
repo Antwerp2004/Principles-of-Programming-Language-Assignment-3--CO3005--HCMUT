@@ -1,0 +1,8 @@
+var x int
+var y int
+var z int
+
+func main() {
+    x, y, z = 1, 2 + 3, 4 * 5 - 1 // Note multi-assignment is illegal in MiniGo
+    println(x, y, z) // Illegal because it's not a function
+}

@@ -1,0 +1,13 @@
+/*
+    This is a multi-line comment.
+    It spans multiple lines.
+*/
+
+// This is a single-line comment.
+
+var   x  int  =   10;  //  Declaration with extra whitespace
+
+func main()  {
+    //  More comments inside the function
+    println ( x  ) ;
+}

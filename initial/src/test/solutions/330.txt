@@ -1,0 +1,1 @@
+Program([StructType(example_t,[(x,IntType)],[]),FuncDecl(calc,[ParDecl(e,Id(example_t))],IntType,Block([Return(BinaryOp(FieldAccess(Id(e),x),+,IntLiteral(10)))])),FuncDecl(main,[],VoidType,Block([VarDecl(e,Id(example_t),StructLiteral(example_t,[(x,IntLiteral(10))])),FuncCall(println,[FuncCall(calc,[Id(e)])])]))])

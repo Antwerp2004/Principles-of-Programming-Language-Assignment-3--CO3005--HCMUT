@@ -1,0 +1,3 @@
+func main() {
+    println(undefinedVariable) // Should cause error: undefinedVariable not declared
+}

@@ -1,0 +1,1 @@
+Program([FuncDecl(max,[ParDecl(a,IntType),ParDecl(b,Id(number))],VoidType,Block([If(BinaryOp(Id(x),==,IntLiteral(6)),Block([FuncCall(doSomething,[])]))]))])

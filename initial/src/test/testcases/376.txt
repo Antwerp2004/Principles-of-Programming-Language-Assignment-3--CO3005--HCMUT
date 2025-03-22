@@ -1,0 +1,5 @@
+var message string = "This string is not terminated"
+
+func main() {
+    println(message)
+}

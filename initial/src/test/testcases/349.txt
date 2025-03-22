@@ -1,0 +1,4 @@
+// Test case 49: Invalid expression in return statement (Error)
+func exampleFunc() int {
+  return "hello" + 5;
+}

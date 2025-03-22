@@ -1,0 +1,1 @@
+Program([FuncDecl(calculate,[ParDecl(a,IntType),ParDecl(b,IntType)],IntType,Block([Return(BinaryOp(Id(a),+,Id(b)))])),FuncDecl(main,[],VoidType,Block([VarDecl(sum,IntType),Assign(Id(diff),FuncCall(calculate,[IntLiteral(10),IntLiteral(5)])),FuncCall(println,[Id(sum),Id(diff)])]))])

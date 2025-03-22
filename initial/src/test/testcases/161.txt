@@ -1,0 +1,8 @@
+var a int = 10
+var b int = 5
+var result int
+
+func main() {
+    result = a + b*2 - b/2
+    println(result)
+}

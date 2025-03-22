@@ -1,0 +1,14 @@
+// Test case 5: Nested if statements with logical operators
+func main() {
+    var age int = 25;
+    var isStudent boolean = true;
+    if (age > 18 && age < 30) {
+        if (isStudent) {
+            println("Eligible for student discount");
+        } else {
+            println("Eligible for adult fare");
+        }
+    } else {
+        println("Not eligible");
+    }
+}

@@ -1,0 +1,1 @@
+Program([StructType(Point,[(x,IntType)],[]),FuncDecl(main,[],VoidType,Block([VarDecl(p,Id(Point),StructLiteral(Point,[(x,IntLiteral(1)),(y,IntLiteral(2))])),VarDecl(z,IntType,FieldAccess(Id(p),z))]))])

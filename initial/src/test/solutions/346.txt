@@ -1,0 +1,1 @@
+Program([FuncDecl(main,[],VoidType,Block([VarDecl(x,IntType,IntLiteral(10)),If(BooleanLiteral(true),Block([VarDecl(x,StringType,StringLiteral("hello")),FuncCall(println,[Id(x)])])),FuncCall(println,[Id(x)])]))])

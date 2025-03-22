@@ -1,0 +1,25 @@
+
+// Test case 36: More Complex struct Declaration
+
+type Address struct {
+  Street string
+  City string
+  Zip int
+}
+
+type Person struct {
+  Name string
+  Age int
+  Address Address
+}
+
+func main() {
+  var p Person = Person {
+    Name: "John Doe",
+    Age: 30,
+    Address: Address {
+      Street: "123 Main St",
+      City: "Anytown",
+      Zip: 12345 } }
+  println(p.Address.City)
+}

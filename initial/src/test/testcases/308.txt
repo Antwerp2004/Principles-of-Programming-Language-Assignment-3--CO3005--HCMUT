@@ -1,0 +1,10 @@
+// Test case 8: Interface definition and empty implementation
+type Printable interface {
+    print();
+}
+type Empty struct {a Triangle;}
+func (e Empty) print() {a := b;}
+func main() {
+    var p Printable = Empty{};
+    p.print();
+}

@@ -1,0 +1,1 @@
+Program([FuncDecl(VT,[],VoidType,Block([For(BinaryOp(Id(i),<,IntLiteral(10)),Block([Break()])),Break(),Continue(),Return(IntLiteral(1)),Return(),FuncCall(foo,[BinaryOp(IntLiteral(2),+,Id(x)),BinaryOp(IntLiteral(4),/,Id(y))]),MethodCall(Id(m),goo,[])]))])

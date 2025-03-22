@@ -1,0 +1,1 @@
+Program([ConstDecl(GREETING,StringLiteral("Hello, World!")),VarDecl(message,StringType),FuncDecl(main,[],VoidType,Block([Assign(Id(message),Id(GREETING)),FuncCall(println,[Id(message)])]))])

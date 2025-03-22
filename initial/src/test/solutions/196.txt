@@ -1,0 +1,1 @@
+var,notAnArray,int,=,5,;,func,main,(,),{,for,index,,,value,:=,range,notAnArray,{,println,(,index,,,value,),;,},;,},;,<EOF>

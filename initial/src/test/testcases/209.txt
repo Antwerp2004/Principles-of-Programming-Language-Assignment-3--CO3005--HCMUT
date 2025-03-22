@@ -1,0 +1,11 @@
+// Test case 9: Function with multiple local variables and complex calculations
+func calculate(a int, b,c int, c float) int {
+    var x int = a + b;
+    var y int = b * c
+    var z int = x - y
+    return z * 2;
+}
+func main() {
+    var result int = calculate(10, 5, 2);
+    println(result);
+}

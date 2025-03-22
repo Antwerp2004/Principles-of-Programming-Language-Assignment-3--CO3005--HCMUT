@@ -1,0 +1,2 @@
+// Test case 11: Error: Unclosed parenthesis
+func main() { if (true  { }

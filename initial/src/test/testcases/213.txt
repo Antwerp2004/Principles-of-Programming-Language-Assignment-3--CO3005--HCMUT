@@ -1,0 +1,2 @@
+// Test case 13: Error: Type mismatch
+func main() { var x int = "hello"; }

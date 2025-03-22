@@ -1,0 +1,1 @@
+Program([FuncDecl(main,[],VoidType,Block([ConstDecl(testConst,IntLiteral(12)),Assign(Id(testConst),IntLiteral(10))]))])

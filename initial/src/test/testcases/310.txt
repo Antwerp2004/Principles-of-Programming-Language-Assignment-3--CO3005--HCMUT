@@ -1,0 +1,2 @@
+// Test case 10: Error: Missing semicolon
+func main() { var x int = 5 ;}

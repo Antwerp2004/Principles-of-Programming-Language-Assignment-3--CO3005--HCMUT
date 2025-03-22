@@ -1,0 +1,9 @@
+ // Test case 28: Nil pointer check and usage (check if parser allows nil)
+func main() {
+    var ptr *int = nil;
+    if (ptr == nil) {
+        println("Pointer is nil");
+    }
+    // The following line might cause a runtime error if nil pointers aren't handled
+    // println(*ptr);  // Remove or comment out for parser testing, address in later stages.
+}

@@ -4,8 +4,8 @@ from AST import *
 
 class CheckSuite(unittest.TestCase):
     def test_redeclared(self):
-        input = """var a int; var b int; var a int; """
-        expect = "Redeclared Variable: a\n"
+        input = """var a int; var b int; var b int; """
+        expect = "Redeclared Variable: b\n"
         self.assertTrue(TestChecker.test(input,expect,400))
 
     def test_type_mismatch(self):

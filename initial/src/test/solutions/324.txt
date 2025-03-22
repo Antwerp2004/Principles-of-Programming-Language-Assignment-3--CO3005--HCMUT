@@ -1,0 +1,1 @@
+Program([StructType(Circle,[(radius,IntType)],[]),MethodDecl(c,Id(Circle),FuncDecl(area,[],IntType,Block([Return(BinaryOp(BinaryOp(IntLiteral(3),*,FieldAccess(Id(c),radius)),*,FieldAccess(Id(c),radius)))]))),FuncDecl(main,[],VoidType,Block([VarDecl(myCircle,Id(Circle),StructLiteral(Circle,[(radius,IntLiteral(5))])),FuncCall(println,[MethodCall(Id(myCircle),area,[])])]))])

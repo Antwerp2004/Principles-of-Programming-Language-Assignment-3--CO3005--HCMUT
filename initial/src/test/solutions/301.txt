@@ -1,0 +1,1 @@
+Program([FuncDecl(main,[],VoidType,Block([VarDecl(name,StringType,StringLiteral("MiniGo")),VarDecl(greeting,StringType,BinaryOp(BinaryOp(StringLiteral("Hello, "),+,Id(name)),+,StringLiteral("!"))),If(BinaryOp(FuncCall(len,[Id(greeting)]),>,IntLiteral(10)),Block([FuncCall(println,[Id(greeting)])]))]))])

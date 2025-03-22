@@ -1,0 +1,6 @@
+
+// Test case 35: Assigning a constant
+func main() {
+    const testConst = 12
+    testConst := 10
+}

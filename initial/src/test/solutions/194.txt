@@ -1,0 +1,1 @@
+var,a,bool,=,true,;,var,b,bool,=,false,;,var,c,bool,=,true,;,func,main,(,),{,var,result,bool,=,(,a,&&,b,),||,(,!,c,&&,a,),;,println,(,result,),;,},<EOF>
