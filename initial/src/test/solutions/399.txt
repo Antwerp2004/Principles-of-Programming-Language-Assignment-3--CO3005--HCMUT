@@ -1,1 +1,1 @@
-Program([ConstDecl(a,MethodCall(Id(x),nigh,[Id(yes)]))])
+Program([VarDecl(a,IntType),VarDecl(b,IntType),VarDecl(b,IntType)])

@@ -198,9 +198,9 @@ class ASTGeneration(MiniGoVisitor):
     # Operand
     def visitOperand(self,ctx:MiniGoParser.OperandContext):
         if ctx.INTEGER_LITERAL():
-            return IntLiteral(ctx.INTEGER_LITERAL().getText())
+            return IntLiteral(int(ctx.INTEGER_LITERAL().getText()))
         elif ctx.FLOAT_LITERAL():
-            return FloatLiteral(ctx.FLOAT_LITERAL().getText())
+            return FloatLiteral(float(ctx.FLOAT_LITERAL().getText()))
         elif ctx.STRING_LITERAL():
             return StringLiteral(ctx.STRING_LITERAL().getText())
         elif ctx.BOOLEAN_LITERAL():

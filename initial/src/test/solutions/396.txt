@@ -1,1 +1,0 @@
-Program([FuncDecl(someOtherFunction,[],VoidType,Block([FuncCall(println,[BinaryOp(Id(x),==,IntLiteral(0x5Af))])]))])

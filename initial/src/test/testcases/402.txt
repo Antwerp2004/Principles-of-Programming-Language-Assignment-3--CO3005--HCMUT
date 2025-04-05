@@ -1,1 +1,1 @@
-Program([VarDecl(a,IntType,Id(b))])
+var a int = b;

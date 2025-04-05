@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Run Test",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/run.py",
+            "args": [
+                "test",
+                "CheckSuite",
+                "test_403"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}

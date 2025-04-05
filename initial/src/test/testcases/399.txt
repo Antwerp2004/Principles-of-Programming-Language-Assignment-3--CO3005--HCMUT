@@ -1,2 +1,2 @@
 
-        const a = x.nigh(yes);
+        var a int; var b int; var b int;

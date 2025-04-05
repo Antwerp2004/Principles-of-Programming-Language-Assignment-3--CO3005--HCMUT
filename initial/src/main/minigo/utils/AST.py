@@ -64,7 +64,7 @@ class ParamDecl(Decl):
     def accept(self, v, param):
         return v.visitParamDecl(self, param)
 
-@dataclass    
+@dataclass
 class VarDecl(Decl,BlockMember):
     varName : str
     varType : Type # None if there is no type
@@ -76,7 +76,7 @@ class VarDecl(Decl,BlockMember):
     def accept(self, v, param):
         return v.visitVarDecl(self, param)
 
-@dataclass    
+@dataclass
 class ConstDecl(Decl,BlockMember):
     conName : str
     conType : Type # None if there is no type 

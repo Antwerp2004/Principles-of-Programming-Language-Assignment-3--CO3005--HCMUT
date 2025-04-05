@@ -1,0 +1,15 @@
+ // Test case 0: Basic program with simple arithmetic and output
+const Point int = 6
+func Point() {
+    var x int = 5;
+    var y int = 10
+    var result int = x + y * 2
+    println(result);
+}
+
+ type C interface {
+ Add(x, y int) int;
+ Subtract(a, b float, c int) float;
+ Reset()
+ SayHello(name string)
+ }
