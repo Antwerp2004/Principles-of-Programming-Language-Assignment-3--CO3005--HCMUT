@@ -51,7 +51,20 @@ class StaticChecker(BaseVisitor, Utils):
     def check_type(self, ltype, rtype):
         if type(ltype) is VoidType:
             return False
-        if (type(ltype) is not type(rtype)) and (type(ltype) is not FloatType or type(rtype) is not IntType):
+        if (type(ltype) is not type(rtype)):
+            if type(ltype) is FloatType and type(rtype) is IntType:
+                return True
+            elif type(ltype) is InterfaceType and type(rtype) is StructType:
+                for i in range(len(ltype.methods)):
+                    res = self.lookup(ltype.methods[i].name, rtype.methods, lambda x: x.fun.name)
+                    if res is None:
+                        return False
+                    for j in range (len(ltype.methods[i].params)):
+                        if type(self.visit(ltype.methods[i].params[j], params)) is not type(self.visit(res.fun.params[j].parType, params)):
+                            return False
+                    if type(self.visit(ltype.methods[i].retType, params)) is not type(self.visit(res.fun.retType, params)):
+                        return False
+                return True
             return False
         if type(ltype) is ArrayType:
             if len(ltype.dimens) != len(rtype.dimens):
@@ -63,20 +76,15 @@ class StaticChecker(BaseVisitor, Utils):
                     if ltype.dimens[i].value != rtype.dimens[i].value:
                         return False
         return True
-    
-    def infer(self, item, typ, param):
-        for sym in param:
-            if sym.name == item.name:
-                sym.mtype = typ
 
     def visitProgram(self, ast:Program, param):
         param = self.global_envi
         for decl in ast.decl:
-            if type(decl) in [MType, StructType, InterfaceType]:
+            if type(decl) in [FuncDecl, StructType, InterfaceType]:
                 sym = self.lookup(decl.name, param, lambda x: x.name)
                 if sym:
-                    raise Redeclared(Function(), decl.name) if type(decl) is MType else Redeclared(Type(), decl.name)
-                if type(decl) is MType:
+                    raise Redeclared(Function(), decl.name) if type(decl) is FuncDecl else Redeclared(Type(), decl.name)
+                if type(decl) is FuncDecl:
                     param.append(Symbol(decl.name, MType([x.parType for x in decl.params], decl.retType), self.decl_num))
                 else:
                     param.append(Symbol(decl.name, decl, self.decl_num))
@@ -85,7 +93,6 @@ class StaticChecker(BaseVisitor, Utils):
         for decl in ast.decl:
             self.visit(decl, param)
             self.decl_num += 1
-            for sym in param: print(sym)
 
     def visitVarDecl(self, ast, param):
         sym = self.lookup(ast.varName, param, lambda x: x.name)
@@ -108,7 +115,7 @@ class StaticChecker(BaseVisitor, Utils):
             if self.decl_num >= sym.value:
                 raise Redeclared(Constant(), ast.conName)
             else:
-                raise Redeclared(Function(), sym.name) if type(sym.mtype) is FuncDecl else Redeclared(Type(), sym.name)
+                raise Redeclared(Function(), sym.name) if type(sym.mtype) is MType else Redeclared(Type(), sym.name)
         const_type, init_type = self.visit(ast.conType, param) if ast.conType else None, None
         if ast.iniExpr:
             init_type = self.visit(ast.iniExpr, param)
@@ -127,7 +134,9 @@ class StaticChecker(BaseVisitor, Utils):
         self.visit(ast.body, o1 + param)
     
     def visitMethodDecl(self, ast, param):
-        sym = self.lookup(ast.recType, param, lambda x: x.name)
+        typ = self.visit(ast.recType, param)
+        sym = self.lookup(typ.name, param, lambda x: x.name)
+        #print(sym)
         if sym:
             if type(sym.mtype) is StructType:
                 method = self.lookup(ast.fun.name, [x for x, _ in sym.mtype.elements] + sym.mtype.methods, lambda x: x.fun.name)
@@ -136,7 +145,7 @@ class StaticChecker(BaseVisitor, Utils):
                 else:
                     self.visit(ast.fun, [ast.receiver] + param)
                     sym.methods.append(ast)
-            elif type(sym) is InterfaceType:
+            elif type(sym.mtype) is InterfaceType:
                 count = sum(1 for x in sym.mtype.methods if x.name == ast.fun.name)
                 if count == 0:
                     raise Undeclared(Method(), ast.fun.name)
@@ -144,7 +153,7 @@ class StaticChecker(BaseVisitor, Utils):
                     raise Redeclared(Method(), ast.fun.name)
                 else:
                     self.visit(ast.fun, [ast.receiver] + param)
-                    sym.methods.append(Prototype(ast.fun.name, [ast.fun.x.parType for x in ast.fun.params], ast.fun.retType))
+                    sym.mtype.methods.append(AST.Prototype(ast.fun.name, [ast.fun.x.parType for x in ast.fun.params], ast.fun.retType))
 
     def visitPrototype(self, ast, param):
         return ast
@@ -185,7 +194,7 @@ class StaticChecker(BaseVisitor, Utils):
             res = self.lookup(prototype.name, prototype_list, lambda x: x)
             if res:
                 raise Redeclared(Prototype(), prototype.name)
-            prototype_list.append(prototype)
+            prototype_list.append(prototype.name)
 
     def visitBlock(self, ast, param): pass
 

@@ -21,20 +21,23 @@ class CheckSuite(unittest.TestCase):
     def test_403(self):
         input = """ // Test case 0: Basic program with simple arithmetic and output
 const Point int = 6
-func Point() {
+func main() {
     var x int = 5;
     var y int = 10
     var result int = x + y * 2
     println(result);
 }
 
- type C interface {
+ type Calculator interface {
  Add(x, y int) int;
  Subtract(a, b float, c int) float;
  Reset()
  SayHello(name string)
  }
+
+func (e Calculator) Reset() {a := b;}
+func (e Calculator) Reset() {c := b;}
 """
-        expect = "Redeclared Function: Point\n"
+        expect = "Redeclared Method: Reset\n"
         self.assertTrue(TestChecker.test(input,expect,403))
   
