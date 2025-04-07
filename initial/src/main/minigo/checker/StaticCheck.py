@@ -54,7 +54,7 @@ class StaticChecker(BaseVisitor, Utils):
         if type(ltype) is VoidType:
             return False
         
-        if (type(ltype) is not type(rtype)):
+        if type(ltype) is not type(rtype):
             if type(ltype) is FloatType and type(rtype) is IntType:
                 return True
             elif type(ltype) is InterfaceType and type(rtype) is StructType:
@@ -63,9 +63,9 @@ class StaticChecker(BaseVisitor, Utils):
                     if res is None:
                         return False
                     for j in range (len(ltype.methods[i].params)):
-                        if type(self.visit(ltype.methods[i].params[j], params)) is not type(self.visit(res.fun.params[j].parType, params)):
+                        if self.visit(ltype.methods[i].params[j], params) != self.visit(res.fun.params[j].parType, params):
                             return False
-                    if type(self.visit(ltype.methods[i].retType, params)) is not type(self.visit(res.fun.retType, params)):
+                    if self.visit(ltype.methods[i].retType, params) != self.visit(res.fun.retType, params):
                         return False
                 return True
             return False
@@ -73,22 +73,33 @@ class StaticChecker(BaseVisitor, Utils):
         if type(ltype) is ArrayType:
             if len(ltype.dimens) != len(rtype.dimens):
                 return False
-            if (type(ltype.eleType) is not type(rtype.eleType)) and (type(ltype.eleType) is not FloatType or type(rtype.eleType) is not IntType):
+            eleType_left = self.visit(ltype.eleType, params)
+            eleType_right = self.visit(rtype.eleType, params)
+            if eleType_left != eleType_right and (type(eleType_left) is not FloatType or type(eleType_right) is not IntType):
                 return False
             for i in range(len(ltype.dimens)):
-                if type(ltype.dimens[i]) is IntegerType and type(rtype.dimens[i]) is IntegerType:
+                if type(ltype.dimens[i]) is IntegerLiteral and type(rtype.dimens[i]) is IntegerLiteral:
                     if ltype.dimens[i].value != rtype.dimens[i].value:
                         return False
                     
-        elif tpye(ltype) is StructType or type(ltype) is InterfaceType:
+        elif type(ltype) is StructType or type(ltype) is InterfaceType:
             if ltype.name != rtype.name:
                 return False
         return True
+    
+
+    def flatten(dat: NestedList):
+        if isinstance(dat,list):
+            return '[' + ','.join(nested2Str(i) for i in dat) + ']'
+        else:
+            return str(dat)
 
 
-    def visitProgram(self, ast:Program, param):
+    def visitProgram(self, ast:Program, param): 
         param = self.global_envi
-        for decl in ast.decl and type(decl) is not MethodDecl:
+        for decl in ast.decl:
+            if type(decl) is MethodDecl:
+                continue
             if type(decl) in [FuncDecl, StructType, InterfaceType]:
                 sym = self.lookup(decl.name, param, lambda x: x.name)
                 if sym:
@@ -124,7 +135,7 @@ class StaticChecker(BaseVisitor, Utils):
             if var_type:
                 if not self.check_type(var_type, init_type):
                     raise TypeMismatch(ast)
-        param.append(Symbol(ast.varName, var_type if var_type else init_type, self.decl_num))
+        param.append(Symbol(ast.varName, ast.varType if ast.varType else init_type, self.decl_num))
 
 
     def visitConstDecl(self, ast, param):
@@ -141,7 +152,7 @@ class StaticChecker(BaseVisitor, Utils):
             if const_type:
                 if not self.check_type(const_type, init_type):
                     raise TypeMismatch(ast)
-        param.append(Symbol(ast.conName, const_type if const_type else init_type, self.decl_num))
+        param.append(Symbol(ast.conName, ast.conType if ast.conType else init_type, self.decl_num))
         
 
     def visitFuncDecl(self, ast, param):
@@ -151,19 +162,26 @@ class StaticChecker(BaseVisitor, Utils):
             if sym:
                 raise Redeclared(Parameter(), param_decl.varName)
             o.append(Symbol(param_decl.varName, param_decl.varType))
+        for stmt in ast.body.member:
+            if type(stmt) is Return:
+                return_type = self.visit(stmt, o + param)
+                if return_type != self.visit(ast.retType, param):
+                    raise TypeMismatch(stmt)
         self.visit(ast.body, o + param)
     
 
     def visitMethodDecl(self, ast, param):
-        typ = self.visit(ast.recType, param)
-        sym = self.lookup(typ.name, param, lambda x: x.name)
+        sym = self.lookup(ast.recType.name, param, lambda x: x.name)
         if sym:
             if type(sym.mtype) is StructType:
-                method = self.lookup(ast.fun.name, [x for x, _ in sym.mtype.elements] + sym.mtype.methods, lambda x: x.fun.name)
-                if method:
+                res = self.lookup(ast.fun.name, sym.mtype.methods, lambda x: x.fun.name)
+                if res:
+                    raise Redeclared(Method(), ast.fun.name)
+                res = self.lookup(ast.fun.name, [x for x, _ in sym.mtype.elements], lambda x: x)
+                if res:
                     raise Redeclared(Method(), ast.fun.name)
                 else:
-                    self.visit(ast.fun, [ast.receiver] + param)
+                    self.visit(ast.fun, [Symbol(ast.receiver, Id(self.visit(ast.recType).name))] + param)
                     sym.methods.append(ast)
 
             elif type(sym.mtype) is InterfaceType:
@@ -173,7 +191,7 @@ class StaticChecker(BaseVisitor, Utils):
                 elif count == 2:
                     raise Redeclared(Method(), ast.fun.name)
                 else:
-                    self.visit(ast.fun, [ast.receiver] + param)
+                    self.visit(ast.fun, [Symbol(ast.receiver, Id(self.visit(ast.recType).name))] + param)
                     sym.mtype.methods.append(AST.Prototype(ast.fun.name, [ast.fun.x.parType for x in ast.fun.params], ast.fun.retType))
 
 
@@ -215,6 +233,7 @@ class StaticChecker(BaseVisitor, Utils):
             res = self.lookup(field, field_list, lambda x: x)
             if res:
                 raise Redeclared(Field(), field)
+        return ast
 
 
     def visitInterfaceType(self, ast, param):
@@ -224,6 +243,7 @@ class StaticChecker(BaseVisitor, Utils):
             if res:
                 raise Redeclared(Prototype(), prototype.name)
             prototype_list.append(prototype.name)
+        return ast
 
 
     def visitBlock(self, ast, param):
@@ -239,7 +259,7 @@ class StaticChecker(BaseVisitor, Utils):
                     if var_type:
                         if not self.check_type(var_type, init_type):
                             raise TypeMismatch(stmt)
-                o.append(Symbol(stmt.varName, var_type if var_type else init_type)) 
+                o.append(Symbol(stmt.varName, stmt.varType if stmt.varType else init_type))
 
             elif type(stmt) is ConstDecl:
                 sym = self.lookup(stmt.conName, o, lambda x: x.name)
@@ -251,24 +271,141 @@ class StaticChecker(BaseVisitor, Utils):
                     if const_type:
                         if not self.check_type(const_type, init_type):
                             raise TypeMismatch(stmt)
-                o.append(Symbol(stmt.conName, const_type if const_type else init_type))
+                o.append(Symbol(stmt.conName, stmt.conType if stmt.conType else init_type))
             
             elif type(stmt) is Assign:
-                self.visit(stmt, o + param)
+                lhs_type = self.visit(stmt, o + param)
+                if not lhs_type:
+                    o.append(Symbol(stmt.lhs.name, self.visit(stmt.rhs, o + param)))
 
 
     def visitAssign(self, ast, param):
-        lhs_type = self.visit(ast.lhs, param)
-        rhs_type = self.visit(ast.rhs, param)
+        rhs_type, lhs_type = self.visit(ast.rhs, param), None
+        if type(ast.lhs) is not Id:
+            lhs_type = self.visit(ast.lhs, param)
+        else:
+            res = self.lookup(ast.name, param, lambda x: x.name)
+            if res:
+                lhs_type = res.mtype
         if not self.check_type(lhs_type, rhs_type):
             raise TypeMismatch(ast)
+        return lhs_type
+
+
+    def visitForBasic(self, ast, param):
+        # Condition
+        condition_type = self.visit(ast.cond, param)
+        if type(condition_type) is not BoolType:
+            raise TypeMismatch(ast)
+        # Loop body
+        self.visit(ast.loop, param)
+
+
+    def visitForStep(self, ast, param):
+        o = []
+        # Initialization
+        if type(ast.init) is VarDecl:
+            var_type = self.visit(ast.init.varType, param) if ast.init.varType else None
+            init_type = self.visit(ast.init.varInit, param)
+            if var_type:
+                if not self.check_type(var_type, init_type):
+                    raise TypeMismatch(ast.init)
+            o.append(Symbol(ast.init.varName, ast.init.varType if ast.init.varType else init_type))
+        elif type(ast.init) is Assign:
+            lhs_type = self.visit(ast.init, o + param)
+            if not lhs_type:
+                o.append(Symbol(ast.init.lhs.name, self.visit(ast.init.rhs, o + param)))
+        # Condition
+        condition_type = self.visit(ast.cond, o + param)
+        if type(condition_type) is not BoolType:
+            raise TypeMismatch(ast)
+        # Update
+        lhs_type = self.visit(ast.update, o + param)
+        if not lhs_type:
+            o.append(Symbol(ast.init.lhs.name, self.visit(ast.init.rhs, o + param)))
+        # Loop body
+        self.visit(ast.loop, o + param)
+
+
+    def visitForEach(self, ast, param):
+        o = []
+        o.append(Symbol(ast.idx.name, IntType()))
+        arr_type = self.visit(ast.arr, param)
+        if type(arr_type) is not ArrayType:
+            raise TypeMismatch(ast)
+        o.append(Symbol(ast.idx.name, arr_type.eleType))
+
+
+    def visitContinue(self, ast, param):
+        pass
+
+    
+    def visitBreak(self, ast, param):
+        pass
+
+
+    def visitReturn(self, ast, param):
+        return self.visit(ast.expr, param) if ast.expr else VoidType()
 
 
     def visitBinaryOp(self, ast, param):
-        return ast
+        ltype = self.visit(ast.left, param)
+        rtype = self.visit(ast.right, param)
+        if ast.op == '+':
+            if type(ltype) is IntType and type(rtype) is IntType:
+                return IntType()
+            elif type(ltype) is FloatType and type(rtype) is FloatType:
+                return FloatType()
+            elif type(ltype) is StringType and type(rtype) is StringType:
+                return StringType()
+            else:
+                raise TypeMismatch(ast)
+        elif ast.op in ['-', '*', '/']:
+            if type(ltype) is IntType and type(rtype) is IntType:
+                return IntType()
+            elif type(ltype) is FloatType and type(rtype) is FloatType:
+                return FloatType()
+            elif (type(ltype) is IntType and type(rtype) is FloatType) or (type(ltype) is FloatType and type(rtype) is IntType):
+                return FloatType()
+            else:
+                raise TypeMismatch(ast)
+        elif ast.op == '%':
+            if type(ltype) is IntType and type(rtype) is IntType:
+                return IntType()
+            else:
+                raise TypeMismatch(ast)
+        elif ast.op in ['==', '!=', '<', '>', '<=', '>=']:
+            if type(ltype) is IntType and type(rtype) is IntType:
+                return BoolType()
+            elif type(ltype) is FloatType and type(rtype) is FloatType:
+                return BoolType()
+            elif type(ltype) is StringType and type(rtype) is StringType:
+                return BoolType()
+            else:
+                raise TypeMismatch(ast)
+        elif ast.op in ['&&', '||']:
+            if type(ltype) is BoolType and type(rtype) is BoolType:
+                return BoolType()
+            else:
+                raise TypeMismatch(ast)
+            
+
+    def visitUnaryOp(self, ast, param):
+        if ast.op == '-':
+            if type(ast.body) is IntType:
+                return IntType()
+            elif type(ast.body) is FloatType:
+                return FloatType()
+            else:
+                raise TypeMismatch(ast)
+        elif ast.op == '!':
+            if type(ast.body) is BoolType:
+                return BoolType()
+            else:
+                raise TypeMismatch(ast)
     
 
-    def visitFuncCall(self, ast, param):
+    def visitFuncCall(self, ast, param): # Haven't checked whether the FuncCall is in an expression (can't return VoidType) or not (must return VoidType)
         func_type = self.lookup(ast.funName, param, lambda x: x.name)
         if func_type is None:
             raise Undeclared(Function(), ast.funName)
@@ -279,12 +416,14 @@ class StaticChecker(BaseVisitor, Utils):
             func_type_arg = self.visit(func_type.mtype.partype[i], param)
             if arg_type != func_type_arg:
                 raise TypeMismatch(ast)
+        return self.visit(func_type.mtype.rettype, param)
             
     
-    def visitMethodCall(self, ast, param):
+    def visitMethCall(self, ast, param):
         receiver = self.visit(ast.receiver, param)
         if type(receiver) is not StructType and type(receiver) is not InterfaceType:
             raise TypeMismatch(ast)
+        
         elif type(receiver) is StructType:
             method = self.lookup(ast.metName, receiver.methods, lambda x: x.fun.name)
             if method is None:
@@ -296,6 +435,7 @@ class StaticChecker(BaseVisitor, Utils):
                 method_type_arg = self.visit(method.fun.params[i].parType, param)
                 if arg_type != method_type_arg:
                     raise TypeMismatch(ast)
+            return self.visit(method.fun.retType, param)
                 
         elif type(receiver) is InterfaceType:
             method = self.lookup(ast.metName, receiver.methods, lambda x: x.name)
@@ -308,6 +448,7 @@ class StaticChecker(BaseVisitor, Utils):
                 method_type_arg = self.visit(method.params[i], param)
                 if arg_type != method_type_arg:
                     raise TypeMismatch(ast)
+            return self.visit(method.retType, param)
     
 
     def visitId(self,ast,param):
@@ -325,7 +466,7 @@ class StaticChecker(BaseVisitor, Utils):
             idx_type = self.visit(idx, param)
             if type(idx_type) is not IntType:
                 raise TypeMismatch(ast)
-        return arr_type
+        return self.visit(arr_type.eleType, param)
 
 
     def visitFieldAccess(self, ast, param):
@@ -358,8 +499,10 @@ class StaticChecker(BaseVisitor, Utils):
         for sz in ast.dimens:
             sz_type = self.visit(sz, param)
             if sz_type is not IntegerType:
-                return TypeMismatch(ltype)
-        array_type = self.visit(ast.eleType, param)
+                return TypeMismatch(ast)
+        ele_type = self.visit(ast.eleType, param)
+
+        return ArrayType(ast.dimens, ast.eleType)
 
 
     def visitStructLiteral(self, ast, param):
