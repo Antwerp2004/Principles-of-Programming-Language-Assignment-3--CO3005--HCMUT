@@ -1,3 +1,0 @@
-func main(x string, y float)  {
-            return 1;
-}

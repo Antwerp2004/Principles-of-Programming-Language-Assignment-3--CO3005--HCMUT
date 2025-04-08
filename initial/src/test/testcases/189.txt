@@ -1,8 +1,0 @@
-var a int = 5
-var b int = 10
-var result bool
-
-func main() {
-    result = a + b > 12 && a * b < 60 // Will cause a type error because an int is compared to a bool
-    println(result)
-}

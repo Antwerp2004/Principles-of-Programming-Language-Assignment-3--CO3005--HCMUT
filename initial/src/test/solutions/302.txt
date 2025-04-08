@@ -1,1 +1,0 @@
-Program([FuncDecl(add,[ParDecl(a,IntType),ParDecl(b,IntType)],IntType,Block([VarDecl(sum,IntType,BinaryOp(Id(a),+,Id(b))),Return(Id(sum))])),FuncDecl(main,[],VoidType,Block([VarDecl(result,IntType,FuncCall(add,[IntLiteral(5),IntLiteral(3)])),FuncCall(println,[Id(result)])]))])

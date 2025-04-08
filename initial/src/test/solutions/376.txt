@@ -1,1 +1,0 @@
-Program([VarDecl(message,StringType,StringLiteral("This string is not terminated")),FuncDecl(main,[],VoidType,Block([FuncCall(println,[Id(message)])]))])

@@ -1,1 +1,0 @@
-Program([FuncDecl(main,[],VoidType,Block([If(BinaryOp(BinaryOp(BinaryOp(Id(x),==,IntLiteral(10)),&&,BinaryOp(Id(y),==,StringLiteral("hello"))),||,BinaryOp(Id(z),!=,FloatLiteral(3.14))),Block([FuncCall(println,[Id(x),Id(y),Id(z)])]))]))])

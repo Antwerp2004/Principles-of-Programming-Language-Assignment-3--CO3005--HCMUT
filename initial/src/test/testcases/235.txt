@@ -1,6 +1,0 @@
-
-// Test case 35: Assigning a constant
-func main() {
-    const testConst int = 12
-    testConst = 10
-}

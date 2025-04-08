@@ -1,1 +1,0 @@
-Program([VarDecl(maxInt,IntType,IntLiteral(2147483647)),FuncDecl(main,[],VoidType,Block([VarDecl(overflow,IntType,BinaryOp(Id(maxInt),+,IntLiteral(1))),FuncCall(println,[Id(overflow)])]))])

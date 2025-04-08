@@ -1,1 +1,0 @@
-var,data,[,4,],int,=,{,10,,,20,,,30,,,40,},;,func,main,(,),{,for,index,,,value,:=,range,data,{,println,(,index,*,value,),;,},;,},;,<EOF>

@@ -1,1 +1,0 @@
-var,numbers,[,3,],int,=,{,1,,,"hello",,,3,},;,func,main,(,),{,println,(,numbers,[,0,],,,numbers,[,1,],,,numbers,[,2,],),;,},;,<EOF>

@@ -1,4 +1,0 @@
-// Test case 48: Type mismatch in assignment (Error)
-func main() {
-    var x = 0.9
-}

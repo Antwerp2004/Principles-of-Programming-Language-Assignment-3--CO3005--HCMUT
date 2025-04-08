@@ -1,1 +1,0 @@
-Program([FuncDecl(main,[],VoidType,Block([VarDecl(ptr,Nil),If(BinaryOp(Id(ptr),==,Nil),Block([FuncCall(println,[StringLiteral("Pointer is nil")])]))]))])

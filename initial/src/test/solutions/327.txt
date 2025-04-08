@@ -1,1 +1,0 @@
-Program([VarDecl(globalVar,IntType,IntLiteral(10)),FuncDecl(main,[],VoidType,Block([VarDecl(globalVar,IntType,IntLiteral(20)),FuncCall(println,[Id(globalVar)])])),FuncDecl(inner,[],VoidType,Block([VarDecl(globalVar,IntType,IntLiteral(30)),FuncCall(println,[Id(globalVar)])]))])

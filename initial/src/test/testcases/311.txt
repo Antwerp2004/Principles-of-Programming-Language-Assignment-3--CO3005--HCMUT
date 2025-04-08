@@ -1,2 +1,0 @@
-// Test case 11: Error: Unclosed parenthesis
-func main() { if (true +  [2]int{1,2}) {a:=b;};}

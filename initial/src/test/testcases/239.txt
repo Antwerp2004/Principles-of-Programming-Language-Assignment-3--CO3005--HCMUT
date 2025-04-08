@@ -1,7 +1,0 @@
-// Test case 39: For range loop
-func main() {
-	arr := [3]int{1,2,3}
-	for index, value := range arr {
-		println(value)
-	}
-}

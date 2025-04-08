@@ -1,1 +1,0 @@
-type,MyType,struct,{,Name,string,;,},;,func,(,mt,MyType,),someMethod,(,),string,{,for,i,:=,0,;,i,<,10,;,i,+,+,{,if,i,==,5,{,return,"Found 5!",;,},;,},;,return,"Not found",;,},;,func,main,(,),{,mt,:=,MyType,{,Name,:,"Example",},;,result,:=,mt,.,someMethod,(,),;,println,(,result,),;,},<EOF>

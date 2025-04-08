@@ -1,7 +1,0 @@
-
-
-
-// Test case 45:  Invalid type in array literal (error)
-func main() {
-   var arr [3]int = int{1, "2", 3}
-}

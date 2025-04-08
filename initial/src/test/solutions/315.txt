@@ -1,1 +1,0 @@
-Program([InterfaceType(Calculator,[Prototype(Add,[IntType,IntType],IntType),Prototype(Subtract,[FloatType,FloatType,IntType],ArrayType(Id(ID),[IntLiteral(3)])),Prototype(Reset,[],VoidType),Prototype(SayHello,[StringType],VoidType)]),InterfaceType(VT,[Prototype(Add,[IntType,IntType],IntType)])])

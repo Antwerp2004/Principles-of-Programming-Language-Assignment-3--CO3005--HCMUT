@@ -1,1 +1,0 @@
-Program([VarDecl(numbers,ArrayType(IntType,[IntLiteral(3)]),ArrayLiteral([IntLiteral(0o27)],IntType,[IntLiteral(1),StringLiteral("hello"),IntLiteral(3)])),FuncDecl(main,[],VoidType,Block([FuncCall(println,[ArrayCell(Id(numbers),[IntLiteral(0)]),ArrayCell(Id(numbers),[IntLiteral(1)]),ArrayCell(Id(numbers),[IntLiteral(2)])])]))])

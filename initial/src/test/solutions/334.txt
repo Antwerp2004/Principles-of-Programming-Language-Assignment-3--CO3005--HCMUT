@@ -1,1 +1,0 @@
-Program([FuncDecl(exampleFunc,[ParDecl(i,IntType)],IntType,Block([VarDecl(xy,IntType,IntLiteral(10))])),FuncDecl(main,[],VoidType,Block([VarDecl(xy,IntType,IntLiteral(10))]))])

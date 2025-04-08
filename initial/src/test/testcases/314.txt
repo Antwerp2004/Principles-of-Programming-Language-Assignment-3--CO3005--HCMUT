@@ -1,2 +1,0 @@
-// Test case 14: Error: Invalid operator
-func main() { var x int = 5 / 3; }

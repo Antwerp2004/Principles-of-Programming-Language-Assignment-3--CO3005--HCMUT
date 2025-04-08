@@ -1,9 +1,0 @@
- 
-// Test case 25: Nested comments (valid)
-func main() {
-    /*
-    Outer comment
-    /* Inner comment */
-    */
-    println("Hello");
-}

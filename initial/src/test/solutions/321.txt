@@ -1,1 +1,0 @@
-Program([FuncDecl(main,[],VoidType,Block([VarDecl(matrix,ArrayType(IntType,[IntLiteral(2),IntLiteral(1)]),ArrayLiteral([IntLiteral(2),IntLiteral(1)],IntType,[ArrayLiteral([],VoidType,[IntLiteral(1),IntLiteral(2),IntLiteral(3)]),IntLiteral(4)])),FuncCall(println,[ArrayCell(Id(matrix),[IntLiteral(1),IntLiteral(2)])])]))])

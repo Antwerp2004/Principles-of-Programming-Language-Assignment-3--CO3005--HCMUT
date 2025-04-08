@@ -1,0 +1,1 @@
+Program([StructType(TIEN,[(Votien,IntType)],[]),MethodDecl(v,Id(TIEN),FuncDecl(getInt,[],VoidType,Block([ConstDecl(c,FieldAccess(Id(v),Votien)),VarDecl(d,FieldAccess(Id(v),tien))])))])

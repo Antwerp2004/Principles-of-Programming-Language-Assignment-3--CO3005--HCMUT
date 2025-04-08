@@ -1,9 +1,0 @@
-func calculate(a int, b int) (int, int) {  // Invalid: Multiple return values
-    return a + b, a - b
-}
-
-func main() {
-    var sum, diff int
-    sum, diff = calculate(10, 5)
-    println(sum, diff)
-}

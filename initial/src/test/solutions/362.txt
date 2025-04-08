@@ -1,1 +1,0 @@
-Program([VarDecl(x,IntType,IntLiteral(7)),FuncDecl(main,[],VoidType,Block([If(BinaryOp(Id(x),>,IntLiteral(5)),Block([FuncCall(println,[StringLiteral("x is greater than 5")])]),Block([FuncCall(println,[StringLiteral("x is not greater than 5")])]))]))])

@@ -1,3 +1,0 @@
-// Test case 17: Error: Array index out of bounds (for completeness - may not be a parsing error)
-func main() { var arr [3]int = {1, 2, 3}; var x int = arr[5]; }
-}

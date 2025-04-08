@@ -1,6 +1,0 @@
-// Test case 47: Missing semicolon in for loop (Error)
-func main() {
-  for i := 0 ;i < 10 ;i+=1 {
-    println(x)
-  }
-}

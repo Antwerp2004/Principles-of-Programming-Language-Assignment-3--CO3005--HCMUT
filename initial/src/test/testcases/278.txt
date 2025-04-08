@@ -1,6 +1,0 @@
- var x int = 5
-
-func main() {
-    var x [1]float = Person{x: int, y: float} // x redeclared in the same scope
-    println(x)
-}

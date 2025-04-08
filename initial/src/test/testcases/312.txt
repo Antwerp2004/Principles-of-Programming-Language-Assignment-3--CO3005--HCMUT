@@ -1,2 +1,0 @@
-// Test case 12: Error: Undeclared variable
-func main() { x -= 5; }

@@ -1,1 +1,0 @@
-var,x,int,=,5,;,func,main,(,),{,var,x,string,=,"hello",;,println,(,x,),;,},;,<EOF>

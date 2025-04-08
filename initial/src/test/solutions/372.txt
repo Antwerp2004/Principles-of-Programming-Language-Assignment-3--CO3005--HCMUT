@@ -1,1 +1,0 @@
-Program([VarDecl(x,IntType,IntLiteral(10)),FuncDecl(main,[],VoidType,Block([FuncCall(println,[Id(x)])]))])

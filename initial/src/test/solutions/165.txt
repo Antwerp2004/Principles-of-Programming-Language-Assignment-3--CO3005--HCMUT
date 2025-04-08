@@ -1,1 +1,0 @@
-type,Printer,interface,{,print,(,message,string,),;,},;,func,main,(,),{,},;,<EOF>

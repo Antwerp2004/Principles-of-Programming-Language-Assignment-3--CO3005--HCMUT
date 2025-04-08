@@ -1,1 +1,0 @@
-Program([FuncDecl(main,[],VoidType,Block([VarDecl(x,IntType,IntLiteral(5))]))])

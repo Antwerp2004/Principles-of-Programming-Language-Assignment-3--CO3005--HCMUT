@@ -1,1 +1,0 @@
-Program([FuncDecl(main,[],VoidType,Block([If(BinaryOp(BooleanLiteral(true),+,ArrayLiteral([IntLiteral(2)],IntType,[IntLiteral(1),IntLiteral(2)])),Block([Assign(Id(a),Id(b))]))]))])

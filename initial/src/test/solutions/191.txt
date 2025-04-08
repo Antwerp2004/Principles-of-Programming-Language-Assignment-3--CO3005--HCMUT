@@ -1,1 +1,0 @@
-var,x,int,=,10,;,func,main,(,),{,if,(,x,>,5,),;,println,(,"x > 5",),;,else,println,(,"x <= 5",),;,},;,<EOF>

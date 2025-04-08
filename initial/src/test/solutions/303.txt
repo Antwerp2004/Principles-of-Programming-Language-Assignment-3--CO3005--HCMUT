@@ -1,1 +1,0 @@
-Program([ConstDecl(VT,ArrayLiteral([IntLiteral(1)],Id(ID),[IntLiteral(1),IntLiteral(3)]))])

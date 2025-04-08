@@ -1,1 +1,1 @@
-var a int = 1.2;
+Program([VarDecl(VoTien,IntLiteral(1)),VarDecl(VoTien,IntLiteral(2))])

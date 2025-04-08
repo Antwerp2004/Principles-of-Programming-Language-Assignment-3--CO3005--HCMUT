@@ -1,8 +1,0 @@
-func min(a int, b string){ 
-if (false) {
-doSomething(a,2,"b");}
-else if (abc > "abc") {doSomethingElif(b,true,foo(x,2))
-}
-else {doSomethingElse(doSomethingElse,foo[3.2][3]);}
-}
-

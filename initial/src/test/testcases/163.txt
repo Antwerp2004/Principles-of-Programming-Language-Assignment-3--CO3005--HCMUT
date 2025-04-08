@@ -1,7 +1,0 @@
-var numbers [5]int = [5]{1, 2, 3, 4, 5}
-
-func main() {
-    for index, value := range numbers {
-        println(index, value)
-    }
-}

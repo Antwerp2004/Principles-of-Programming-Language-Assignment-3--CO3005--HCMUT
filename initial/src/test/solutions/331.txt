@@ -1,1 +1,0 @@
-Program([FuncDecl(main,[],VoidType,Block([VarDecl(x,IntType,IntLiteral(10)),VarDecl(y,IntType,IntLiteral(5)),If(BinaryOp(BinaryOp(BinaryOp(Id(x),>,IntLiteral(5)),&&,BinaryOp(Id(y),<,IntLiteral(10))),||,BinaryOp(Id(x),==,Id(y))),Block([FuncCall(println,[StringLiteral("True")])]),Block([FuncCall(println,[StringLiteral("False")])]))]))])

@@ -1,8 +1,0 @@
-var x int = 10
-var y string = "hello"
-var z bool = true
-const PI = 3.14
-
-func main() {
-    println(x, y, z, PI)
-}

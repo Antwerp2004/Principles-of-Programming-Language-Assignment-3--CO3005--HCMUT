@@ -1,1 +1,0 @@
-Program([VarDecl(x,IntType,IntLiteral(10)),VarDecl(y,StringType,StringLiteral("hello")),VarDecl(z,Id(bool),BooleanLiteral(true)),ConstDecl(PI,FloatLiteral(3.14)),FuncDecl(main,[],VoidType,Block([FuncCall(println,[Id(x),Id(y),Id(z),Id(PI)])]))])

@@ -1,1 +1,0 @@
-Program([InterfaceType(Printer,[Prototype(print,[StringType],VoidType)]),FuncDecl(main,[],VoidType,Block([Assign(ArrayCell(MethodCall(ArrayCell(FieldAccess(ArrayCell(FieldAccess(FuncCall(foo,[IntLiteral(5)]),x),[IntLiteral(2),Id(k)]),y),[FuncCall(foo,[IntLiteral(6)])]),abc,[FloatLiteral(8.25)]),[BooleanLiteral(false)]),IntLiteral(10))]))])

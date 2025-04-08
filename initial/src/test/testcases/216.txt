@@ -1,3 +1,0 @@
-// Test case 16: Error: Invalid return type
-func foo() int { return "hello"; }
-func main() {}

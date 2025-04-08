@@ -1,1 +1,0 @@
-Program([FuncDecl(bar,[ParDecl(arr,FloatType),ParDecl(b,BoolType)],VoidType,Block([Assign(ArrayCell(Id(x),[FuncCall(a,[Id(b)]),FuncCall(b,[Id(a)])]),FuncCall(foo,[IntLiteral(1),IntLiteral(2),StringLiteral("abcd"),BinaryOp(IntLiteral(154),/,IntLiteral(4))])),VarDecl(x,IntType,FuncCall(readString,[]))]))])

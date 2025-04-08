@@ -1,6 +1,0 @@
-// Test case 26: Multi-line string
-func main() {
-    var message string = "This is a very long string" +
-                           "that spans multiple lines.";
-    println(message);
-}

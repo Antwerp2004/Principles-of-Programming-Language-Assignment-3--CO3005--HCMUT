@@ -1,0 +1,1 @@
+Program([FuncDecl(Votien,[ParDecl(b,IntType)],VoidType,Block([VarDecl(b,IntLiteral(1)),VarDecl(a,IntLiteral(1)),ConstDecl(a,IntLiteral(1))]))])

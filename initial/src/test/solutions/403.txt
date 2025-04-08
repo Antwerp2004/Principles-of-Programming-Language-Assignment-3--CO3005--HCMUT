@@ -1,1 +1,1 @@
-Redeclared Method: Reset
+Redeclared Variable: VoTien

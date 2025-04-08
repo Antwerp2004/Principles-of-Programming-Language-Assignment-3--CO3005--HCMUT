@@ -1,8 +1,0 @@
-// Test case 32: Missing colon in struct initialization (Error)
-type Foo struct {
-    bar int;
-}
-
-func main() {
-     var f Foo = Foo{bar: 5};
-}

@@ -1,1 +1,0 @@
-Program([FuncDecl(foo,[],IntType,Block([Return(StringLiteral("hello"))])),FuncDecl(main,[],VoidType,Block([FuncCall(Add,[Id(x),Id(y)])]))])

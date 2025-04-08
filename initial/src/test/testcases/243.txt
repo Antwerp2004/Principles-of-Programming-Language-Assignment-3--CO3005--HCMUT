@@ -1,7 +1,0 @@
-// Test case 43:  Nil comparison with type assertion
-func main() {
-	var inter int = nil
-	if (inter == nil) {
-		println("It is nil")
-	}
-	}

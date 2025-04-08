@@ -1,3 +1,0 @@
-// Test case 18: Error: Struct field does not exist
-type Point struct { x int; }
-func main() { var p Point = Point{x: 1, y: 2}; var z int = p.z; }

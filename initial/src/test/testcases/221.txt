@@ -1,5 +1,0 @@
-// Test case 21: Multi-dimensional array
-func main() {
-    var matrix [2][1]int = [2][1]int{{1, 2, 3}, 4};
-    println(matrix[1][2]); // Output: 6
-}

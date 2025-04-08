@@ -1,1 +1,0 @@
-Program([FuncDecl(foo,[ParDecl(str,StringType)],BoolType,Block([FuncCall(writeString,[Id(str)]),VarDecl(x,BinaryOp(IntLiteral(7),+,BinaryOp(Id(t),-,BooleanLiteral(false))))]))])

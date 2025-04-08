@@ -1,1 +1,0 @@
-Program([VarDecl(x,IntType,IntLiteral(5)),FuncDecl(main,[],VoidType,Block([VarDecl(x,ArrayType(FloatType,[IntLiteral(1)]),StructLiteral(Person,[(x,Id(i)),(y,Id(fl))])),FuncCall(println,[Id(x)])]))])

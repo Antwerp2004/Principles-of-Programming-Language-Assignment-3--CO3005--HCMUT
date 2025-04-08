@@ -1,9 +1,0 @@
-
-type Printer interface {
-    print(message string)
-}
-
-func main() {
-    // No implementation here to test just declaration
-}
-

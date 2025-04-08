@@ -1,3 +1,0 @@
-func bar(arr float, b boolean) {
-x[2][8] := foo(1,2,"abcd",154/4)
-var x int= readString()

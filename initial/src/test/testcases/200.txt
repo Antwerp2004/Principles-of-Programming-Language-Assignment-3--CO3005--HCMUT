@@ -1,7 +1,0 @@
- // Test case 0: Basic program with simple arithmetic and output
-func main() {
-    var x int = 5;
-    var y int = 10
-    var result int = x + y * 2
-    println(result);
-}

@@ -1,3 +1,0 @@
-
-// Test case 19: Error: Invalid character
-func main() { var x int = 5$; }
