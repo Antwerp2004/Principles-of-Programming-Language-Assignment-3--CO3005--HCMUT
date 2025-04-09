@@ -1,1 +1,1 @@
-Program([StructType(TIEN,[(Votien,IntType)],[]),StructType(TIEN,[(v,IntType)],[])])
+Program([StructType(Replicant,[(Ikari,IntType)],[]),StructType(Replicant,[(v,IntType)],[])])

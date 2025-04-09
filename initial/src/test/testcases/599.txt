@@ -1,0 +1,1 @@
+Program([ConstDecl(a,IntLiteral(3)),ConstDecl(b,UnaryOp(-,Id(a))),ConstDecl(c,UnaryOp(-,Id(b))),VarDecl(d,ArrayType(IntType,[Id(c)]),ArrayLiteral([IntLiteral(3)],IntType,[IntLiteral(1),IntLiteral(2),IntLiteral(3)]))])

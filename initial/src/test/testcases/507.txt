@@ -1,0 +1,13 @@
+
+type S1 struct {EVA_01 int;}
+type I1 interface {EVA_01();}
+var a I1;
+var c I1;
+var d S1;
+func foo(){
+    c := a;
+    d := S1{EVA_01:8};
+}
+
+var e int = 6.0;
+        

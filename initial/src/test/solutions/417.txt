@@ -1,1 +1,1 @@
-Redeclared Type: TIEN
+Redeclared Type: Replicant

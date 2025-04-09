@@ -1,0 +1,1 @@
+Program([StructType(S1,[(EVA_01,IntType)],[]),StructType(S2,[(EVA_01,IntType)],[]),InterfaceType(I1,[Prototype(EVA_01,[IntType,IntType],Id(S1))]),InterfaceType(I2,[Prototype(EVA_01,[IntType],Id(S1))]),MethodDecl(s,Id(S1),FuncDecl(EVA_01,[ParDecl(a,IntType),ParDecl(b,IntType)],Id(S1),Block([Return(Id(s))]))),VarDecl(a,Id(S1)),VarDecl(c,Id(I1),Id(a)),VarDecl(d,Id(I2),Id(a))])

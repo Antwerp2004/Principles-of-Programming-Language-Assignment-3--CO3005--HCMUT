@@ -1,0 +1,1 @@
+Program([VarDecl(v,BinaryOp(IntLiteral(2),*,IntLiteral(3))),ConstDecl(a,BinaryOp(Id(v),+,IntLiteral(1))),ConstDecl(b,BinaryOp(Id(a),*,IntLiteral(5))),ConstDecl(c,UnaryOp(!,BinaryOp(Id(b),>,IntLiteral(3))))])

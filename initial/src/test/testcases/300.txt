@@ -1,0 +1,13 @@
+
+type S1 struct {votien int;}
+type I1 interface {votien();}
+var a I1;
+var c I1;
+var d S1;
+func foo(){
+    c := a;
+    d := S1{votien:8};
+}
+
+var e int = 6.0;
+        

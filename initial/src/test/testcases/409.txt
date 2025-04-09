@@ -1,1 +1,1 @@
-Program([InterfaceType(VoTien,[Prototype(VoTien,[],VoidType),Prototype(VoTien,[IntType],VoidType)])])
+Program([InterfaceType(Shinji,[Prototype(Shinji,[],VoidType),Prototype(Shinji,[IntType],VoidType)])])

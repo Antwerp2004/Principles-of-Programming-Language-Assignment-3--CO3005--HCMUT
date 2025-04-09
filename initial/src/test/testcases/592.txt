@@ -1,0 +1,7 @@
+
+const v = 3;
+const k = v + 1;
+func foo(a [3] int) {
+    foo([k] int {1,2,3})
+} 
+        

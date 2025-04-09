@@ -1,0 +1,1 @@
+Program([ConstDecl(a,BinaryOp(StringLiteral(2),+,StringLiteral(#))),ConstDecl(b,BinaryOp(Id(a),*,IntLiteral(5)))])

@@ -1,0 +1,1 @@
+Program([VarDecl(a,FuncCall(foo,[])),FuncDecl(foo,[],IntType,Block([VarDecl(a,FuncCall(koo,[])),VarDecl(c,FuncCall(getInt,[])),FuncCall(putInt,[Id(c)]),FuncCall(putIntLn,[Id(c)]),Return(IntLiteral(1))])),VarDecl(d,FuncCall(foo,[])),FuncDecl(koo,[],IntType,Block([VarDecl(a,FuncCall(foo,[])),Return(IntLiteral(1))]))])

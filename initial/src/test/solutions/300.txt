@@ -1,0 +1,1 @@
+Program([StructType(S1,[(votien,IntType)],[]),InterfaceType(I1,[Prototype(votien,[],VoidType)]),VarDecl(a,Id(I1)),VarDecl(c,Id(I1)),VarDecl(d,Id(S1)),FuncDecl(foo,[],VoidType,Block([Assign(Id(c),Id(a)),Assign(Id(d),StructLiteral(S1,[(votien,IntLiteral(8))]))])),VarDecl(e,IntType,FloatLiteral(6.0))])

@@ -1,1 +1,1 @@
-Program([ConstDecl(VoTien,IntLiteral(1)),VarDecl(VoTien,IntLiteral(2))])
+Program([ConstDecl(Shinji,IntLiteral(1)),VarDecl(Shinji,IntLiteral(2))])

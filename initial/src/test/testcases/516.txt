@@ -1,0 +1,1 @@
+Program([VarDecl(a,BoolType,BinaryOp(BinaryOp(BooleanLiteral(true),&&,BooleanLiteral(false)),||,BooleanLiteral(true))),VarDecl(b,BoolType,BinaryOp(BooleanLiteral(true),&&,IntLiteral(1)))])
