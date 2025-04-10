@@ -1,1 +1,0 @@
-Program([ConstDecl(a,IntLiteral(1)),FuncDecl(foo,[],VoidType,Block([Assign(Id(a),FloatLiteral(1.0))]))])

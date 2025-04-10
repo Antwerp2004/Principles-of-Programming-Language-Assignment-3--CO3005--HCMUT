@@ -1,0 +1,4 @@
+func someOtherFunction() {
+    putBool(8 == 5)
+    someOtherFunction(8 == 5)
+}

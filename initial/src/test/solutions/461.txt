@@ -1,0 +1,1 @@
+Type Mismatch: Assign(Id(result),BinaryOp(BinaryOp(Id(a),+,BinaryOp(Id(b),*,IntLiteral(2))),-,BinaryOp(Id(b),/,IntLiteral(2))))

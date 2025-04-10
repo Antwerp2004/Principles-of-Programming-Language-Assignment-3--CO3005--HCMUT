@@ -1,0 +1,8 @@
+ var x int = 5
+type Person struct {
+    x int
+    y float
+}
+func main() {
+    var x[1]float = Person{x: 5, y: 6.0} // x redeclared in the same scope
+}

@@ -1,0 +1,11 @@
+
+var x int = 10
+const y = (7+6/4*5)%(7-2*1);
+func main() {
+    if (x > 5){
+        putStringLn("x > 5")
+    } else {
+        putStringLn("x <= 5")
+    }
+}
+var z [y] int = [3]int{1, 2, 3}

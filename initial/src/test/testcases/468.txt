@@ -1,0 +1,14 @@
+var age int = 25
+var isStudent boolean = false
+
+func main() {
+    if (age < 30) {
+        if (!isStudent) {
+            putStringLn("Young professional")
+        } else {
+            putStringLn("Young student")
+        }
+    } else {
+        putInt([2]int{1, 2})
+    }
+}

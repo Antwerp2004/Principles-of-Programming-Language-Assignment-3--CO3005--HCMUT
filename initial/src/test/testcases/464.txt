@@ -1,0 +1,15 @@
+type Point struct {
+    x int
+    y int
+}
+
+var p Point
+
+func main() {
+    p.x := 10
+    p.y := 20
+    putIntLn(p.x)
+    putIntLn(p.y)
+    var t Point
+    t.z := 9
+}

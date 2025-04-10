@@ -1,1 +1,8 @@
-Program([FuncDecl(foo,[],VoidType,Block([If(BooleanLiteral(true),Block([VarDecl(a,FloatType,FloatLiteral(1.02))]),Block([VarDecl(a,IntType,FloatLiteral(1.02))]))]))])
+var x int = 10
+var y string = "hello"
+var z boolean = true
+const PI = 3.14
+
+func main() {
+    var y[PI]int
+}

@@ -1,1 +1,1 @@
-Type Mismatch: VarDecl(a,IntType,FloatLiteral(1.02))
+Type Mismatch: ArrayType(IntType,[Id(PI)])

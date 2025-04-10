@@ -1,0 +1,12 @@
+ var globalVar float = 20
+
+func myFunction() {
+    var localVar int = 10
+    putFloatLn(globalVar + localVar)
+}
+
+func main() {
+    myFunction()
+    globalVar := 7
+    putIntLn(localVar) // Error: localVar is not defined in main
+}

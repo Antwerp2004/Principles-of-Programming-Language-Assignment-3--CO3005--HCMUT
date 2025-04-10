@@ -1,0 +1,10 @@
+
+type Printer interface {
+    print(message string)
+}
+
+func main() {
+    // No implementation here to test just declaration
+    var x = main(5)
+}
+

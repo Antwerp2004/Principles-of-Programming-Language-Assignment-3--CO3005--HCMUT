@@ -1,0 +1,16 @@
+
+func findValue(arr [5]float, target float) int {
+    for i := 0; i < 5; i+=1 {
+        if (arr[i] == target) {
+            return i // Return index if found
+        }
+    }
+    return -1  // Return -1 if not found
+}
+
+var numbers [5]float = [5]int{1, 2, 3, 4, 5}
+
+func main() {
+    var index int = findValue(numbers, 3.0)
+    return index
+}

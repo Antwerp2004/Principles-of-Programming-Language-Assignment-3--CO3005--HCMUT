@@ -1,1 +1,7 @@
-Program([StructType(Replicant,[(Ikari,IntType)],[]),VarDecl(a,IntLiteral(1)),MethodDecl(v,Id(Replicant),FuncDecl(foo,[ParDecl(a,IntType),ParDecl(b,IntType)],VoidType,Block([VarDecl(a,IntLiteral(1))]))),FuncDecl(foo,[ParDecl(a,IntType),ParDecl(b,IntType)],VoidType,Block([VarDecl(a,IntLiteral(1))]))])
+
+const v = 3;
+const k = v - 1;
+func foo(a [3] int) {
+    foo([k] int {1,2,3})
+} 
+        

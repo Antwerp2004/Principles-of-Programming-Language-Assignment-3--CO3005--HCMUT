@@ -1,1 +1,0 @@
-Program([FuncDecl(Ikari,[ParDecl(b,IntType)],VoidType,Block([For(VarDecl(a,IntLiteral(1)),BinaryOp(Id(c),<,IntLiteral(1)),Assign(Id(a),BinaryOp(Id(a),+,Id(c))),Block([ConstDecl(c,IntLiteral(2))]))]))])

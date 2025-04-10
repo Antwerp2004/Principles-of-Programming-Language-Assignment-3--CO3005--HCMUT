@@ -1,0 +1,5 @@
+func bar(arr float, b int) int{
+var x [2][3] int
+x[2][b] := bar(1.0,154/5)
+var y int= getString()
+}

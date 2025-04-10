@@ -1,0 +1,1 @@
+Type Mismatch: If(FuncCall(isEven,[Id(num)]),Block([FuncCall(putStringLn,[StringLiteral("Even")])]),Block([FuncCall(putStringLn,[StringLiteral("Odd")])]))

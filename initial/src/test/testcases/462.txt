@@ -1,0 +1,9 @@
+var x int = 7
+
+func main() {
+    if (x > 5) {
+        putString("x is greater than 5")
+    } else {
+        println("x is not greater than 5")
+    }
+}

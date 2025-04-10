@@ -1,0 +1,1 @@
+Type Mismatch: FuncCall(putFloatLn,[BinaryOp(IntLiteral(10),+,IntLiteral(5))])

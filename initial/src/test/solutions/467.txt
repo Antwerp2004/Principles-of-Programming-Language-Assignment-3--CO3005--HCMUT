@@ -1,0 +1,1 @@
+Type Mismatch: FuncCall(putIntLn,[Id(sum),Id(diff)])

@@ -1,0 +1,1 @@
+Type Mismatch: VarDecl(x,ArrayType(FloatType,[IntLiteral(1)]),StructLiteral(Person,[(x,IntLiteral(5)),(y,FloatLiteral(6.0))]))

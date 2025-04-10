@@ -1,0 +1,7 @@
+func max(a int, b string) int
+{
+var x = 5
+// Comment 1
+if (x == 6) else {max(a, b);}
+// Comment 2
+}

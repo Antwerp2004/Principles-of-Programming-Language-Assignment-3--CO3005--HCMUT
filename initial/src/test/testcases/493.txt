@@ -1,1 +1,9 @@
-Program([VarDecl(a,ArrayLiteral([IntLiteral(2)],IntType,[IntLiteral(1),IntLiteral(2)])),VarDecl(c,ArrayType(FloatType,[IntLiteral(2)]),Id(a))])
+
+var a boolean = true
+var b boolean = false
+var c boolean = true
+
+func main() int{
+    var result boolean = (a && b) || (!c && a)
+    return
+}

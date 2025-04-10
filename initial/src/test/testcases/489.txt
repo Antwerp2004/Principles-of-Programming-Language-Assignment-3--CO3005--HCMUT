@@ -1,0 +1,9 @@
+var a int = 5
+var b int = 69
+var result boolean
+
+func main() {
+    result := a + b > 12 && a * b < 60
+    putBool(result)
+    putFloat(result)
+}

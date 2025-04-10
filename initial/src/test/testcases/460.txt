@@ -1,0 +1,9 @@
+const GREETING = "Hello, World!"
+
+var message string
+
+func main() {
+    message := GREETING
+    putString(message)
+    var x boolean = 6.0
+}

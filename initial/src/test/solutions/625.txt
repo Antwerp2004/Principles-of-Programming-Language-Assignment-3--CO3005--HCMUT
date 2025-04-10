@@ -1,1 +1,0 @@
-Type Mismatch: Assign(Id(foo),IntLiteral(1))

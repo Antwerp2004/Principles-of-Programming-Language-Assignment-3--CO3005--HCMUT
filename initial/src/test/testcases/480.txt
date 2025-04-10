@@ -1,0 +1,16 @@
+ 
+var a int = 10
+var b int = 5
+var c string = "hello"
+
+func main() {
+    if ((a > 5 && b < 10) || c == "world") {
+        if (a + b == 3.e+3) {
+            putStringLn("Condition met")
+        } else {
+            putStringLn("Inner condition failed")
+        }
+    } else {
+        putStringLn("Outer condition failed")
+    }
+}

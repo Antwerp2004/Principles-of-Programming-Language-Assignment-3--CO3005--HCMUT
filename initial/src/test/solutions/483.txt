@@ -1,0 +1,1 @@
+Type Mismatch: BinaryOp(BinaryOp(FieldAccess(Id(p),name),+,StringLiteral(" is ")),+,FieldAccess(Id(p),age))

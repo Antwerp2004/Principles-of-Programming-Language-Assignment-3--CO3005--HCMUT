@@ -1,1 +1,21 @@
-Program([FuncDecl(foo,[],VoidType,Block([Return()])),FuncDecl(foo1,[],IntType,Block([Return(IntLiteral(1))])),FuncDecl(foo2,[],FloatType,Block([Return(IntLiteral(2))]))])
+type MyInterface interface {
+	doSomething()
+}
+type MyType struct{x MyInterface
+}
+
+func (m MyType) doSomething() {
+	putStringLn("Hello")
+}
+
+func main() {
+	var i MyInterface
+	var m MyType
+	i := m
+    i.doSomething()// Calling method doSomething of MyInterface
+
+    var y [5]MyInterface
+    y[6].doSomething()
+    y[6] := 10
+
+}

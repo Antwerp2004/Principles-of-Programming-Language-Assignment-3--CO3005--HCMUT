@@ -1,0 +1,6 @@
+var message string = "This string is not terminated"
+
+func main() {
+    var x string
+    x := putString(message + "5")
+}

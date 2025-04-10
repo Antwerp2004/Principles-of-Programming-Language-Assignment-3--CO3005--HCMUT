@@ -1,0 +1,16 @@
+type Rectangle struct {
+    width int
+    height int
+}
+
+func (r Rectangle) area() int {
+    return r.width * r.height
+}
+
+var rect Rectangle
+
+func main() {
+    rect.width := 5
+    rect.height := 10.0e+6
+    putIntLn(rect.area())
+}

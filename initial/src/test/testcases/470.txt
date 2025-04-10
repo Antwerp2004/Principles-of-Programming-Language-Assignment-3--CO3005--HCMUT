@@ -1,0 +1,17 @@
+
+type Circle struct {
+    radius float
+}
+
+var circles [3]Circle
+
+func main() {
+    circles[0].radius := 5
+    circles[1].radius := 7
+    circles[2].radius := 9
+    var c Circle
+    for _, c := range circles {
+        var x int
+        putIntLn(x.radius)
+    }
+}

@@ -1,0 +1,1 @@
+Type Mismatch: VarDecl(x,BoolType,IntLiteral(0))

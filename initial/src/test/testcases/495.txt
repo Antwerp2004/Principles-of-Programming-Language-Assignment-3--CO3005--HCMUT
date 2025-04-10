@@ -1,0 +1,9 @@
+var notAnArray int = 5;
+
+func main() {
+    var index int
+    var value int
+    for index, value := range notAnArray {
+        index -= 1
+    }
+}

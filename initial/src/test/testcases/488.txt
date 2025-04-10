@@ -1,0 +1,13 @@
+func isEven(n int) int {
+    return (n + 1) % 2
+}
+
+var num int = 8
+
+func main() {
+    if (isEven(num)) {
+        putStringLn("Even")
+    } else {
+        putStringLn("Odd")
+    }
+}

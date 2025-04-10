@@ -5,24 +5,24 @@ from AST import *
 class ASTGenSuite(unittest.TestCase):
     ASTGenTest = 299
     
-    def test_ASTGen_00(self):
-        inp = \
-            """
-type S1 struct {votien int;}
-type I1 interface {votien();}
-var a I1;
-var c I1;
-var d S1;
-func foo(){
-    c := a;
-    d := S1{votien:8};
-}
+#     def test_ASTGen_00(self):
+#         inp = \
+#             """
+# type S1 struct {votien int;}
+# type I1 interface {votien();}
+# var a I1;
+# var c I1;
+# var d S1;
+# func foo(){
+#     c := a;
+#     d := S1{votien:8};
+# }
 
-var e int = 6.0;
-        """
-        out = """Program([FuncDecl(main,[],VoidType,Block([VarDecl(x,IntType,IntLiteral(5)),VarDecl(y,IntType,IntLiteral(10)),VarDecl(result,IntType,BinaryOp(Id(x),+,BinaryOp(Id(y),*,IntLiteral(2)))),FuncCall(println,[Id(result)])]))])"""
-        ASTGenSuite.ASTGenTest += 1
-        self.assertTrue(TestAST.checkASTGen(inp, out, ASTGenSuite.ASTGenTest))
+# var e int = 6.0;
+#         """
+#         out = """Program([FuncDecl(main,[],VoidType,Block([VarDecl(x,IntType,IntLiteral(5)),VarDecl(y,IntType,IntLiteral(10)),VarDecl(result,IntType,BinaryOp(Id(x),+,BinaryOp(Id(y),*,IntLiteral(2)))),FuncCall(println,[Id(result)])]))])"""
+#         ASTGenSuite.ASTGenTest += 1
+#         self.assertTrue(TestAST.checkASTGen(inp, out, ASTGenSuite.ASTGenTest))
 
 #     def test_ASTGen_01(self):
 #         inp = \
@@ -1566,11 +1566,16 @@ var e int = 6.0;
 #         ASTGenSuite.ASTGenTest += 1
 #         self.assertTrue(TestAST.checkASTGen(inp, out, ASTGenSuite.ASTGenTest))
 
-#     def test_ASTGen_99(self):
-#         inp = \
-#             """
-#         const a = x.nigh(yes);
-# """
-#         out = "Program([ConstDecl(a,MethodCall(Id(x),nigh,[Id(yes)]))])"
-#         ASTGenSuite.ASTGenTest += 1
-#         self.assertTrue(TestAST.checkASTGen(inp, out, ASTGenSuite.ASTGenTest))
+    def test_ASTGen_99(self):
+        inp = \
+            """
+        // const a = [2][3]int{{1, 2, 3}, {4, 5, 6}};
+        var b [2][3]int;
+        func main() {
+            var c [2][3]int = b;
+            putFloatLn(c[1][2])
+        }
+"""
+        out = "Program([ConstDecl(a,MethodCall(Id(x),nigh,[Id(yes)]))])"
+        ASTGenSuite.ASTGenTest += 1
+        self.assertTrue(TestAST.checkASTGen(inp, out, 399))

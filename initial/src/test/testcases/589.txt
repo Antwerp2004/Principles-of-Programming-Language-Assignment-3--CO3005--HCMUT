@@ -1,1 +1,0 @@
-Program([ConstDecl(a,BinaryOp(IntLiteral(2),+,IntLiteral(3))),VarDecl(b,ArrayType(IntType,[BinaryOp(BinaryOp(Id(a),*,IntLiteral(2)),+,Id(a))])),VarDecl(c,ArrayType(IntType,[IntLiteral(15)]),Id(b))])

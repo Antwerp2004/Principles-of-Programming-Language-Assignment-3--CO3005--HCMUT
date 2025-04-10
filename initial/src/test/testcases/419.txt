@@ -1,0 +1,1 @@
+Program([StructType(Replicant,[(Ikari,IntType)],[]),MethodDecl(v,Id(Replicant),FuncDecl(foo,[ParDecl(v,IntType)],VoidType,Block([Return()]))),FuncDecl(foo,[],VoidType,Block([Return()]))])

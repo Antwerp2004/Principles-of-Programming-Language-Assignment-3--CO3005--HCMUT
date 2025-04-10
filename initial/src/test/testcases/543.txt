@@ -1,1 +1,0 @@
-Program([VarDecl(a,Id(Replicant)),FuncDecl(foo,[],Id(Replicant),Block([Return(Id(a)),Return(Id(Replicant))])),StructType(Replicant,[(tien,IntType)],[])])

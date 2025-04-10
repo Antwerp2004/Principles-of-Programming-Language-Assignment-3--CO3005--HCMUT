@@ -1,1 +1,1 @@
-Undeclared Method: koo
+Type Mismatch: BinaryOp(Id(j),!=,UnaryOp(!,BooleanLiteral(false)))

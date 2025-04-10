@@ -1,0 +1,1 @@
+Type Mismatch: FuncCall(putFloatLn,[ArrayCell(Id(c),[IntLiteral(1),IntLiteral(2)])])

@@ -1,0 +1,9 @@
+
+func foo () {
+    const b = 1;
+    for a, b := range [3]int{1, 2, 3} {
+        var a = 1;
+    }
+    var a = 1;
+}
+        

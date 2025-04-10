@@ -1,0 +1,8 @@
+// Test case 1: String manipulation and conditional output
+func main() {
+    var name string = "MiniGo";
+    var greeting string = "Hello, " + name + "!";
+    if (len(greeting) > 10) {
+        putString(greeting)
+    }
+}

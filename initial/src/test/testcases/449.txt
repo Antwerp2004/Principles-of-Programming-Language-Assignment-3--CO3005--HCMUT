@@ -1,0 +1,11 @@
+
+type K struct {a int;}
+func (k K) koo(a [3] int) {return;}
+type H interface {koo(a [7] int);}
+
+const c = 2 + 5;
+func foo() {
+    var k H;
+    k.koo([7] int {1,2,3})
+} 
+        

@@ -1,0 +1,12 @@
+var data = [4]int{10, 20, 30, 40}
+
+func main() {
+    var index int
+    var value int
+    for index, value := range data {
+        putIntLn(index * value)
+    }
+    data[index] := 6
+    main(); y := 10
+    var z int = y && true
+}
